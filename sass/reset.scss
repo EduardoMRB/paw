@@ -1,0 +1,15 @@
+@import "_variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html {
+  font: 22px Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: $background-color;
+}

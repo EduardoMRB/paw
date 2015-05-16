@@ -1,0 +1,36 @@
+@import "_variables";
+
+.content-sections {
+  margin: 40px 0;
+  display: flex;
+
+  .section {
+    width: 33%;
+    padding: 15px;
+    border-radius: 6px;
+    background: $content-color;
+    margin: 2px;
+    color: #fff;
+
+    .section-title {
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+    }
+
+    .section-excerpt {
+      font-size: 0.7rem;
+      padding-top: 20px;
+      line-height: 20px;
+    }
+
+    .section-img {
+      width: 100%;
+      transition: all 1s ease-in-out;
+
+      &:hover {
+        transform: rotate(360deg);
+        transition: all 1s ease-in-out;
+      }
+    }
+  }
+}

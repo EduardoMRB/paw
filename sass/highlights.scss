@@ -1,0 +1,22 @@
+@import "_variables";
+
+.highlight-header {
+  color: $font-color;
+  margin-bottom: 40px;
+}
+
+.highlight {
+  padding: 20px;
+  background-color: $content-color;
+  border-radius: 6px;
+  box-shadow: 2px 2px 6px $font-color;
+  color: #fff;
+
+  .highlight-excerpt {
+    margin-top: 20px;
+  }
+
+  .highlight-image {
+    width: 100%;
+  }
+}
