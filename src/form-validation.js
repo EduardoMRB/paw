@@ -15,9 +15,26 @@
     }
   }
 
-  // Extends NodeList prototype so we can call forEach on formInputs
-  NodeList.prototype.forEach = Array.prototype.forEach;
+  function validateForm(formInputs) {
+    return e => {
+      let submitButton = document.querySelector("#submit-btn");
+      validateInput(e);
 
-  let formInputs = document.querySelectorAll(".control-group input[type=text]");
-  formInputs.forEach(i => i.addEventListener("blur", validateInput));
+      if (canSubmitform(formInputs)) {
+        submitButton.classList.remove("disabled");
+      } else {
+        submitButton.classList.add("disabled");
+      }
+    }
+  }
+
+  function canSubmitform(formInputs) {
+    return formInputs.every(i => i.classList.contains("success"));
+  }
+
+  // Transform NodeList into an Array to use it's prototype functions
+  let formInputs = Array.prototype.slice.call(
+    document.querySelectorAll(".control-group input[type=text]")
+  );
+  formInputs.forEach(i => i.addEventListener("blur", validateForm(formInputs)));
 }(document));
